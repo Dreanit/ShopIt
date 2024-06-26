@@ -33,8 +33,6 @@ public class UserController {
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody UserRegistrationDTO registrationDto) {
 
-        // User reference will be set in the service
-        // Initialize to an empty list
         List<UserAddress> addresses = registrationDto.getAddresses().stream()
                 .map(dto -> new UserAddress(
                         null,

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductService {
@@ -17,7 +18,7 @@ public class ProductService {
         return productDao.findAll();
     }
 
-    public Product getProductById(Long id) {
+    public Product getProductById(UUID id) {
         return productDao.findById(id).orElse(null);
     }
 
@@ -25,7 +26,7 @@ public class ProductService {
         return productDao.save(product);
     }
 
-    public void deleteProduct(Long id) {
+    public void deleteProduct(UUID id) {
         productDao.deleteById(id);
     }
 }

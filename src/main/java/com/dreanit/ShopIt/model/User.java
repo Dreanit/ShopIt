@@ -3,6 +3,7 @@ package com.dreanit.ShopIt.model;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -16,10 +17,11 @@ import java.util.UUID;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @UuidGenerator
     private UUID id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private String password;
     @CreationTimestamp

@@ -19,13 +19,18 @@ public class User {
     @Id
     @UuidGenerator
     private UUID id;
+
     private String firstName;
     private String lastName;
+
     @Column(unique = true)
     private String email;
+
     private String password;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
+
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<UserAddress> addresses;
 

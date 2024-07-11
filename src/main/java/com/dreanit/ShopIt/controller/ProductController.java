@@ -20,7 +20,6 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @Autowired
 
     @GetMapping("/all")
     @ResponseBody

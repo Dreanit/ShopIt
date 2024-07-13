@@ -1,6 +1,7 @@
 package com.dreanit.ShopIt.model;
 
 import com.dreanit.ShopIt.enums.OrderStatus;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -13,12 +14,18 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     public UUID id;
+    @Column(name = "product_id")
     public UUID productId;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    private Product product;
 
     private int quantity;
     private double price;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "order_id")
     private Order order;
 

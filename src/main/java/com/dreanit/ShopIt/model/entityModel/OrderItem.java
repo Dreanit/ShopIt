@@ -1,11 +1,8 @@
-package com.dreanit.ShopIt.model;
+package com.dreanit.ShopIt.model.entityModel;
 
-import com.dreanit.ShopIt.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity

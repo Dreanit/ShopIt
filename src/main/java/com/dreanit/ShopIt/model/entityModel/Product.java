@@ -1,4 +1,4 @@
-package com.dreanit.ShopIt.model;
+package com.dreanit.ShopIt.model.entityModel;
 
 import com.dreanit.ShopIt.enums.ProductStatus;
 import jakarta.persistence.*;

@@ -2,7 +2,7 @@ package com.dreanit.ShopIt.service;
 
 import com.dreanit.ShopIt.dao.ProductDao;
 import com.dreanit.ShopIt.enums.ProductStatus;
-import com.dreanit.ShopIt.model.Product;
+import com.dreanit.ShopIt.model.entityModel.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

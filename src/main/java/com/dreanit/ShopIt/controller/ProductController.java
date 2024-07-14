@@ -3,7 +3,7 @@ package com.dreanit.ShopIt.controller;
 import com.dreanit.ShopIt.dto.ProductUpdateDTO;
 import com.dreanit.ShopIt.enums.ProductStatus;
 import com.dreanit.ShopIt.model.APIResponse;
-import com.dreanit.ShopIt.model.Product;
+import com.dreanit.ShopIt.model.entityModel.Product;
 import com.dreanit.ShopIt.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.dreanit.ShopIt.model;
+package com.dreanit.ShopIt.model.entityModel;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

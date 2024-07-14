@@ -1,4 +1,4 @@
-package com.dreanit.ShopIt.model;
+package com.dreanit.ShopIt.model.entityModel;
 
 import com.dreanit.ShopIt.enums.OrderStatus;
 import jakarta.persistence.*;
@@ -25,7 +25,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     public OrderStatus status = OrderStatus.PROCESSING;
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<OrderItem> orderItems=new ArrayList<>();
+    public List<OrderItem> orderItems=new ArrayList<>();
 
 
     public void setOrderItems(List<OrderItem> orderItems) {
@@ -34,4 +34,6 @@ public class Order {
             item.setOrder(this);
         }
     }
+
+
 }

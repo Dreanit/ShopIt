@@ -1,8 +1,8 @@
-package com.dreanit.ShopIt.wrapper;
+package com.dreanit.ShopIt.model.wrapper;
 
 import com.dreanit.ShopIt.enums.OrderStatus;
 import com.dreanit.ShopIt.enums.ProductStatus;
-import com.dreanit.ShopIt.model.OrderItem;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -28,13 +28,15 @@ public class OrderDetails {
     }
 
     public static class OrderDetailItem {
+        public UUID itemId;
         public UUID productId;
         public String productName; // Add fields as needed
         public ProductStatus productStatus; // Add fields as needed
         public int quantity;
         public double price;
 
-        public OrderDetailItem(UUID productId, String productName,ProductStatus productStatus, int quantity, double price) {
+        public OrderDetailItem(UUID itemId,UUID productId, String productName,ProductStatus productStatus, int quantity, double price) {
+            this.itemId = itemId;
             this.productId = productId;
             this.productName = productName;
             this.productStatus = productStatus;

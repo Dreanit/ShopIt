@@ -2,8 +2,8 @@ package com.dreanit.ShopIt.controller;
 
 import com.dreanit.ShopIt.dto.UserRegistrationDTO;
 import com.dreanit.ShopIt.model.APIResponse;
-import com.dreanit.ShopIt.model.User;
-import com.dreanit.ShopIt.model.UserAddress;
+import com.dreanit.ShopIt.model.entityModel.User;
+import com.dreanit.ShopIt.model.entityModel.UserAddress;
 import com.dreanit.ShopIt.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;

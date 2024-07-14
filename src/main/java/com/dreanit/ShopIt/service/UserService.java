@@ -1,12 +1,11 @@
 package com.dreanit.ShopIt.service;
 
 import com.dreanit.ShopIt.dao.UserDao;
-import com.dreanit.ShopIt.model.User;
-import com.dreanit.ShopIt.model.UserAddress;
+import com.dreanit.ShopIt.model.entityModel.User;
+import com.dreanit.ShopIt.model.entityModel.UserAddress;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

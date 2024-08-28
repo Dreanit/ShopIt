@@ -22,4 +22,11 @@ public class Product {
     public double price;
     public int quantity;
 
+
+    public String imageUrl;
+
+    // Category association (assuming a Category entity exists)
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    public Category category;
 }

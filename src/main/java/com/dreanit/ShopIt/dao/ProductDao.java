@@ -12,4 +12,5 @@ import java.util.UUID;
 public interface ProductDao extends JpaRepository<Product, UUID> {
     List<Product> findByStatus(ProductStatus status);
 
+    List<Product> findByCategoryId(UUID categoryId);
 }

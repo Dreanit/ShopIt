@@ -3,6 +3,7 @@ package com.dreanit.ShopIt.controller;
 import com.dreanit.ShopIt.dto.ProductUpdateDTO;
 import com.dreanit.ShopIt.enums.ProductStatus;
 import com.dreanit.ShopIt.model.APIResponse;
+import com.dreanit.ShopIt.model.entityModel.Category;
 import com.dreanit.ShopIt.model.entityModel.Product;
 import com.dreanit.ShopIt.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +24,21 @@ public class ProductController {
 
     @GetMapping("/all")
     @ResponseBody
-    public ResponseEntity<APIResponse<List<Product>>> getAllProducts(@RequestParam ProductStatus status) {
-    if(status!=null){
-        List<Product> data = productService.getAllProductsFromStatus(status);
+    public ResponseEntity<APIResponse<List<Product>>> getAllProducts(@RequestParam(required = false) UUID categoryId) {
+    if(categoryId!=null){
+        List<Product> data = productService.getProductFromCategory(categoryId);
         APIResponse<List<Product>> response = new APIResponse<>(true, data, null);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
         List<Product> data = productService.getAllProducts();
         APIResponse<List<Product>> response = new APIResponse<>(true, data, null);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
+    @GetMapping("/categories")
+    @ResponseBody
+    public ResponseEntity<APIResponse<List<Category>>> getAllCategories() {
+        List<Category> data = productService.getAllCategory();
+        APIResponse<List<Category>> response = new APIResponse<>(true, data, null);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 

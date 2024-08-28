@@ -8,5 +8,5 @@ RUN mvn clean package -DskipTests
 FROM openjdk:17.0.2-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/ShoptIt-0.0.1-SNAPSHOT.jar ShoptIt.jar
-EXPOSE 8080
+EXPOSE 2828
 ENTRYPOINT ["java","-jar","ShoptIt.jar"]
